@@ -1,0 +1,11 @@
+services:
+  coturn:
+    image: instrumentisto/coturn
+    restart: always
+    ports:
+      - "3478:3478"
+      - "3478:3478/udp"
+      - "5349:5349"
+      - "5349:5349/tcp"
+    volumes:
+      - ./turnserver.conf:/etc/coturn/turnserver.conf
